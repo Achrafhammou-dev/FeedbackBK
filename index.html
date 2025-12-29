@@ -3,280 +3,297 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Burger King Morocco — Customer Experience</title>
+  <title>BK Morocco — We Care</title>
 
-  <!-- Bootstrap (for responsiveness & components) -->
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://img.favpng.com/4/17/25/hamburger-burger-king-logo-hungry-jack-s-clip-art-png-favpng-k84QnXHdvae9SD8gEAJNA7vnT.jpg">
+  
+  <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/c/cc/Burger_King_2020.svg">
 
   <style>
-    :root{
-      --bk-red:#b30006;
-      --bk-orange:#ff6f00;
-      --bk-yellow:#ffd200;
-      --bk-dark:#1f1f1f;
-      --glass: rgba(255,255,255,0.6);
-      --card-bg: #fff;
+    :root {
+      --bk-red: #d62300;
+      --bk-orange: #ed7902;
+      --bk-brown: #502314;
+      --bk-beige: #f5ebdc;
+      --font-flame: 'Lilita One', cursive;
     }
 
-    *{box-sizing:border-box}
-    body{font-family:Inter,system-ui,Segoe UI,Arial,Helvetica;background:linear-gradient(180deg,#fff7f2 0%,#fff 60%);color:var(--bk-dark);-webkit-font-smoothing:antialiased}
-    a{color:inherit}
-
-    /* Hero */
-    .hero{border-radius:18px;padding:18px;background:linear-gradient(90deg,var(--bk-red),var(--bk-orange));color:#fff;box-shadow:0 14px 50px rgba(179,0,6,0.18);overflow:hidden}
-    .logo-wrap img{height:72px;width:auto;border-radius:12px;background:#fff;padding:6px}
-    .hero h1{font-weight:800;letter-spacing:0.2px}
-    .hero p{opacity:0.95}
-
-    /* Glass card */
-    .card-ghost{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));border-radius:14px;box-shadow:0 10px 30px rgba(20,20,20,0.06)}
-
-    /* Form elements */
-    label{font-weight:600}
-    .form-control:focus{box-shadow:0 8px 24px rgba(179,0,6,0.08);border-color:var(--bk-red)}
-
-    /* Buttons */
-    .btn-bk{background:linear-gradient(90deg,var(--bk-red),var(--bk-orange));color:#fff;border:0;border-radius:999px;padding:10px 20px;font-weight:700}
-    .btn-bk:active{transform:translateY(1px)}
-
-    /* Spinner inside button */\    
-    .btn-spinner{display:inline-flex;align-items:center;gap:8px}
-
-    /* Right column menus */
-    .menu-item{display:flex;gap:12px;align-items:center;padding:10px;border-radius:12px;background:#fff;border:1px solid #f3e9e6}
-    .menu-item img{width:80px;height:64px;object-fit:cover;border-radius:10px}
-    .price{font-weight:700;color:var(--bk-red)}
-
-    /* Motion design: subtle entrance */
-    .fade-up{opacity:0;transform:translateY(10px);animation:fadeUp .6s ease forwards}
-    @keyframes fadeUp{to{opacity:1;transform:none}}
-
-    /* Decorative burger animation */
-    .burger-float{position:absolute;right:-30px;top:-20px;opacity:0.12;transform:rotate(-12deg);width:260px}
-
-    /* Responsive tweaks */
-    @media(max-width:992px){
-      .hero{padding:14px}
-      .logo-wrap img{height:60px}
-      .menu-item img{width:72px;height:58px}
-      .burger-float{width:160px;right:-20px;top:-10px}
+    body {
+      background-color: var(--bk-beige);
+      font-family: 'Open Sans', sans-serif;
+      color: var(--bk-brown);
+      overflow-x: hidden;
     }
 
-    @media(max-width:576px){
-      .hero h1{font-size:1.1rem}
-      .hero p{font-size:0.87rem}
-      .menu-item{padding:8px}
-      .menu-item img{width:64px;height:52px}
+    /* 🔥 Motion Background Overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle, rgba(237,121,2,0.05) 0%, rgba(245,235,220,1) 70%);
+      z-index: -1;
     }
 
-    /* Prevent text selection during button double click frenzy */
-    .no-select{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+    h1, h2, h3, .bk-font {
+      font-family: var(--font-flame);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-    /* Small micro text */
-    .micro{font-size:0.85rem;color:#5b5b5b}
+    /* Premium Hero Section */
+    .hero-card {
+      background: var(--bk-brown);
+      border-radius: 30px;
+      padding: 40px;
+      color: var(--bk-beige);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(80, 35, 20, 0.2);
+      border: 4px solid var(--bk-orange);
+    }
+
+    .hero-card::after {
+      content: "WHOPPER";
+      position: absolute;
+      bottom: -20px;
+      right: -10px;
+      font-family: var(--font-flame);
+      font-size: 8rem;
+      opacity: 0.05;
+      transform: rotate(-10deg);
+    }
+
+    .logo-bk {
+      width: 100px;
+      filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+      animation: bounceIn 1s;
+    }
+
+    /* Card Styling */
+    .glass-panel {
+      background: white;
+      border-radius: 25px;
+      border: 2px solid #e8e0d5;
+      box-shadow: 0 10px 30px rgba(80, 35, 20, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .glass-panel:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Inputs & Buttons */
+    .form-control, .form-select {
+      border-radius: 12px;
+      border: 2px solid #eee;
+      padding: 12px;
+      transition: all 0.3s;
+    }
+
+    .form-control:focus {
+      border-color: var(--bk-orange);
+      box-shadow: 0 0 0 4px rgba(237, 121, 2, 0.1);
+    }
+
+    .btn-fire {
+      background: var(--bk-red);
+      color: white;
+      font-family: var(--font-flame);
+      font-size: 1.2rem;
+      border-radius: 50px;
+      padding: 12px 35px;
+      border: none;
+      box-shadow: 0 6px 0px #9e1a00;
+      transition: all 0.2s;
+    }
+
+    .btn-fire:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0px #9e1a00;
+    }
+
+    /* Offers Section */
+    .offer-badge {
+      background: var(--bk-orange);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 8px;
+      font-family: var(--font-flame);
+      font-size: 0.9rem;
+    }
+
+    .promo-card {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .promo-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      transition: scale 0.5s;
+    }
+
+    .promo-card:hover .promo-img {
+      scale: 1.1;
+    }
+
+    /* Footer Navigation */
+    footer {
+      background: var(--bk-brown);
+      color: var(--bk-beige);
+      padding: 40px 0;
+      border-radius: 50px 50px 0 0;
+      margin-top: 50px;
+    }
+
+    .nav-link-bk {
+      color: var(--bk-beige);
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-link-bk:hover {
+      color: var(--bk-orange);
+    }
+
   </style>
 </head>
 <body>
-  <div class="container py-3">
-    <div class="hero d-flex align-items-center gap-3 mb-3 position-relative">
-      <div class="logo-wrap d-flex align-items-center gap-3">
-        <!-- Use the logo link provided by user -->
-        <img src="https://img.favpng.com/4/17/25/hamburger-burger-king-logo-hungry-jack-s-clip-art-png-favpng-k84QnXHdvae9SD8gEAJNA7vnT.jpg" alt="Burger King Morocco Logo">
-        <div>
-          <h1 class="h4 mb-0">Burger King Morocco</h1>
-          <p class="micro mb-0">Customer Care — Rapide, Juste, et à l'écoute</p>
+
+  <div class="container py-4">
+    <div class="hero-card mb-5 animate__animated animate__fadeInDown">
+      <div class="row align-items-center">
+        <div class="col-md-2 text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Burger_King_2020.svg" class="logo-bk" alt="BK Logo">
+        </div>
+        <div class="col-md-8 text-center text-md-start">
+          <h1 class="display-5 mb-0">HAVE IT YOUR WAY</h1>
+          <p class="lead" style="color: var(--bk-orange)">Your feedback makes us better. Tell us everything!</p>
+        </div>
+        <div class="col-md-2 d-none d-md-block">
+            <i class="fa-solid fa-fire-burner fa-4x opacity-25"></i>
         </div>
       </div>
-
-      <div class="ms-auto d-none d-md-flex align-items-center gap-2 hero-media">
-        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=7e0f0c1f5b5e6d6f1c8f9c1a3c9b8b4f" alt="Burger" class="rounded-2" style="height:86px;object-fit:cover">
-      </div>
-
-      <img class="burger-float" src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6e73b0b5b8b4a7c6a7a9d6f6a9e7c3b4" alt="decorative burger">
     </div>
 
-    <div class="row gy-3">
+    <div class="row g-4">
       <div class="col-lg-7">
-        <div class="card-ghost p-3 p-md-4 fade-up">
-
-          <div class="d-flex justify-content-between align-items-start mb-2">
-            <div>
-              <h2 class="h5 mb-0" style="color:var(--bk-red)">Déposez votre réclamation</h2>
-              <div class="micro">Partagez l'expérience (commande, lieu, photo) — nous allons l'examiner.</div>
-            </div>
-            <div class="text-end micro">
-              Ref: <strong id="quickRef">auto</strong><br>
-              Horaires: 09:00 - 23:00
-            </div>
-          </div>
-
-          <!-- Preserve original form & ids -->
-          <form id="complaintForm" class="complaint-form" enctype="multipart/form-data">
-            <div class="mb-3">
-              <label for="fullName" class="form-label">Full Name *</label>
-              <input type="text" id="fullName" name="fullName" class="form-control" required>
-              <div class="invalid-feedback" id="fullNameError"></div>
-            </div>
-
-            <div class="row g-2">
-              <div class="col-sm-6 mb-3">
-                <label for="email" class="form-label">Email Address *</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-                <div class="invalid-feedback" id="emailError"></div>
+        <div class="glass-panel p-4 p-md-5 animate__animated animate__fadeInLeft">
+          <h2 class="mb-4" style="color: var(--bk-red)"> <i class="fa-solid fa-paper-plane me-2"></i> File a Complaint</h2>
+          
+          <form id="complaintForm" class="no-select">
+            <div class="row g-3">
+              <div class="col-md-12">
+                <label class="form-label fw-bold">Full Name</label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Entrez votre nom complet" required>
               </div>
-              <div class="col-sm-6 mb-3">
-                <label for="phone" class="form-label">Phone Number *</label>
-                <input type="tel" id="phone" name="phone" class="form-control" required>
-                <div class="invalid-feedback" id="phoneError"></div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Email</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="nom@exemple.com" required>
               </div>
-            </div>
-
-            <div class="row g-2">
-              <div class="col-sm-6 mb-3">
-                <label for="orderNumber" class="form-label">Order Number *</label>
-                <input type="text" id="orderNumber" name="orderNumber" class="form-control" required>
-                <div class="invalid-feedback" id="orderNumberError"></div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Phone</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="06XXXXXXXX" required>
               </div>
-              <div class="col-sm-6 mb-3">
-                <label for="complaintCategory" class="form-label">Complaint Category *</label>
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Order #</label>
+                <input type="text" id="orderNumber" name="orderNumber" class="form-control" placeholder="e.g. #BK12345" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Category</label>
                 <select id="complaintCategory" name="complaintCategory" class="form-select" required>
-                  <option value="">Select a category</option>
-                  <option value="Late delivery">Late delivery</option>
-                  <option value="Missing items">Missing items</option>
-                  <option value="Bad quality">Bad quality</option>
-                  <option value="Other">Other</option>
+                  <option value="">Choose category...</option>
+                  <option value="Product Quality">Product Quality</option>
+                  <option value="Service Speed">Service Speed</option>
+                  <option value="Staff Behavior">Staff Behavior</option>
+                  <option value="Cleanliness">Cleanliness</option>
                 </select>
-                <div class="invalid-feedback" id="complaintCategoryError"></div>
+              </div>
+              <div class="col-md-12">
+                <label class="form-label fw-bold">Details</label>
+                <textarea id="complaintDetails" name="complaintDetails" class="form-control" rows="4" placeholder="How can we help you?" required></textarea>
+              </div>
+              
+              <div class="col-md-12">
+                <label class="form-label fw-bold">Evidence (Image/PDF)</label>
+                <input type="file" id="fileUpload" class="form-control">
+              </div>
+
+              <div class="col-12 text-center mt-4">
+                <button id="submitBtn" type="submit" class="btn-fire w-100">
+                  SUBMIT FEEDBACK <i class="fa-solid fa-bolt ms-2"></i>
+                </button>
               </div>
             </div>
-
-            <div class="mb-3">
-              <label for="complaintDetails" class="form-label">Describe your complaint *</label>
-              <textarea id="complaintDetails" name="complaintDetails" class="form-control" rows="5" placeholder="Please provide detailed information about your complaint..." required></textarea>
-              <div class="invalid-feedback" id="complaintDetailsError"></div>
-            </div>
-
-            <div class="mb-3">
-              <label for="fileUpload" class="form-label">Upload Evidence (Optional)</label>
-              <div class="d-flex gap-2 align-items-center">
-                <input type="file" id="fileUpload" name="fileUpload" accept="image/*,.pdf" multiple class="form-control-file">
-              </div>
-              <div id="filePreview" class="mt-2 d-flex flex-wrap gap-2"></div>
-              <div class="micro mt-1">Supported: JPG, PNG, PDF (Max 5MB each)</div>
-            </div>
-
-            <div class="d-flex gap-2 justify-content-center mt-3">
-              <button id="submitBtn" type="submit" class="btn btn-bk btn-spinner no-select">
-                <span class="btn-text">Submit Complaint</span>
-                <span class="spinner-grow spinner-grow-sm ms-1" role="status" aria-hidden="true" style="display:none"></span>
-              </button>
-              <button type="button" class="btn btn-outline-secondary" onclick="document.getElementById('complaintForm').reset();document.getElementById('filePreview').innerHTML='';">Reset</button>
-            </div>
-
           </form>
 
-          <div id="successMessage" class="mt-3" style="display:none">
-            <div class="p-3 rounded-3" style="background:#fffefc;border:1px solid #f5ebe6">
-              <div class="d-flex align-items-center gap-2">
-                <i class="fas fa-check-circle" style="color:var(--bk-red);font-size:24px"></i>
-                <div>
-                  <div style="color:var(--bk-red);font-weight:700">Complaint Submitted Successfully!</div>
-                  <div class="micro">Thank you for your feedback. We have received your complaint and will contact you soon.</div>
-                </div>
-              </div>
-              <div class="mt-2 text-end"><button onclick="resetForm();" class="btn btn-outline-secondary">Submit Another</button></div>
-            </div>
+          <div id="successMessage" class="text-center py-5 animate__animated animate__zoomIn" style="display:none">
+            <i class="fa-solid fa-circle-check fa-5x text-success mb-3"></i>
+            <h2 class="text-success">THANK YOU!</h2>
+            <p>Your message is flame-grilled and ready for review.</p>
+            <button onclick="location.reload()" class="btn btn-outline-dark rounded-pill">Submit Another</button>
           </div>
-
         </div>
       </div>
 
       <div class="col-lg-5">
-        <div class="card-ghost p-3 fade-up">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <h3 class="h6 mb-0" style="color:var(--bk-red)">Popular Menu — Real BK items</h3>
-            <div class="micro">Prices indicative (MAD)</div>
-          </div>
-
-          <!-- Example real-style menu items (images from unsplash as placeholders) -->
-          <div class="d-flex flex-column gap-2">
-            <div class="menu-item">
-              <img src="https://images.unsplash.com/photo-1606756793935-01f4f2f7d6d3?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=1c1a6a8b6c6d" alt="whopper">
-              <div class="flex-grow-1">
-                <div style="font-weight:700">Whopper</div>
-                <div class="micro">Chargrilled beef, tomatoes, lettuce, mayo</div>
+        <div class="glass-panel p-4 animate__animated animate__fadeInRight">
+          <h3 class="mb-4"><i class="fa-solid fa-tag text-orange me-2"></i> Hot Offers</h3>
+          
+          <div class="d-flex flex-column gap-3">
+            <div class="promo-card shadow-sm">
+              <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=800" class="promo-img" alt="Promo">
+              <div class="p-3 bg-white border-top">
+                <span class="offer-badge mb-2 d-inline-block">LIMITED TIME</span>
+                <h5 class="fw-bold mb-0">Double Whopper Deal</h5>
+                <p class="small text-muted mb-0">Order now and get 20% OFF on App.</p>
               </div>
-              <div class="price">45 MAD</div>
             </div>
 
-            <div class="menu-item">
-              <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=a9c7fbcc5c12a6a2d4e2b9a3f0b6f8e2" alt="chicken">
-              <div class="flex-grow-1">
-                <div style="font-weight:700">Crispy Chicken Sandwich</div>
-                <div class="micro">Crunchy fillet, pickles, signature sauce</div>
+            <div class="promo-card shadow-sm">
+              <img src="https://images.unsplash.com/photo-1626078436898-984999908331?q=80&w=800" class="promo-img" alt="Promo">
+              <div class="p-3 bg-white border-top">
+                <span class="offer-badge mb-2 d-inline-block" style="background:var(--bk-red)">HOT PRICE</span>
+                <h5 class="fw-bold mb-0">Family King Box</h5>
+                <p class="small text-muted mb-0">4 Burgers + Large Fries + Soda.</p>
               </div>
-              <div class="price">38 MAD</div>
-            </div>
-
-            <div class="menu-item">
-              <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=0e2d4c1a3b6f" alt="fries">
-              <div class="flex-grow-1">
-                <div style="font-weight:700">Large Fries</div>
-                <div class="micro">Golden, crispy</div>
-              </div>
-              <div class="price">15 MAD</div>
-            </div>
-
-            <div class="menu-item">
-              <img src="https://images.unsplash.com/photo-1541534401786-07f43f18b3f3?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=21b5c8a9a2a4" alt="shake">
-              <div class="flex-grow-1">
-                <div style="font-weight:700">Chocolate Shake</div>
-                <div class="micro">Creamy, thick</div>
-              </div>
-              <div class="price">22 MAD</div>
-            </div>
-
-          </div>
-
-          <hr class="my-3">
-
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <div>
-              <div class="h5 mb-0" style="color:var(--bk-red)">Satisfaction</div>
-              <div class="micro">Rated 4.6 — based on recent reviews</div>
-            </div>
-            <div class="text-end">
-              <div style="font-weight:800;font-size:1.4rem;color:var(--bk-red)">4.6</div>
-              <div class="micro">10k+ reviews</div>
             </div>
           </div>
 
-          <div class="d-flex gap-2 flex-wrap">
-            <button class="btn btn-outline-secondary">Track Order</button>
-            <button class="btn btn-outline-secondary">Call Support</button>
-            <button class="btn btn-outline-secondary">Store Locator</button>
+          <div class="mt-4 p-3 rounded-4" style="background: var(--bk-orange); color: white;">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <h5 class="fw-bold mb-0">BK Rewards</h5>
+                <p class="small mb-0">Join 1M+ King fans in Morocco</p>
+              </div>
+              <i class="fa-solid fa-crown fa-2x"></i>
+            </div>
           </div>
-        </div>
-
-        <div class="card-ghost p-3 mt-3 fade-up">
-          <h4 class="h6" style="color:var(--bk-red)">Tips before you submit</h4>
-          <ul>
-            <li>Attach a photo of receipt or bag for faster handling.</li>
-            <li>Note exact item name, time, and branch.</li>
-            <li>For refunds include order number and screenshot of payment.</li>
-          </ul>
-          <div class="micro mt-2">Need live help? Use Call Support button.</div>
         </div>
       </div>
     </div>
-
-    <footer class="text-center mt-4 micro">&copy; 2025 Burger King Morocco • For urgent matters call: +212 5XX-XXXXXX</footer>
   </div>
 
+  <footer>
+    <div class="container text-center">
+      <div class="d-flex justify-content-center gap-4 mb-4">
+        <a href="https://burgerkingmaroc.vercel.app/" class="nav-link-bk">OFFICIAL SITE</a>
+      </div>
+      <p class="small opacity-50">© 2025 BURGER KING MOROCCO. ALL RIGHTS FLAME-GRILLED.</p>
+      <div class="mt-3">
+        <i class="fa-brands fa-facebook-f mx-2"></i>
+        <i class="fa-brands fa-instagram mx-2"></i>
+        <i class="fa-brands fa-tiktok mx-2"></i>
+      </div>
+    </div>
+  </footer>
   <!-- Keep the user's original submission script unchanged -->
   <script src="script.js"></script>
 
@@ -350,5 +367,6 @@
 
   <!-- Bootstrap JS (optional for some components) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
